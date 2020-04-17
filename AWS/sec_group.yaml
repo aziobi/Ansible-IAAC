@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  tasks:
+  - name: create security groups
+    ec2_group:
+      name: Allow_80
+      description: sg with rule descriptions
+      region: us-east-1
+      #state: absent
+      rules:
+        - proto: tcp
+          ports:
+          - 80
+          cidr_ip: 0.0.0.0/0
+        
+  
+    
+    
